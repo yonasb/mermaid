@@ -1,138 +1,127 @@
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet" />
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
     <link
-      href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@mdi/font@6.9.96/css/materialdesignicons.min.css"
       rel="stylesheet"
     />
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Noto+Sans+SC&display=swap"
+      rel="stylesheet"
+    />
     <style>
       body {
         /* background: rgb(221, 208, 208); */
         /* background:#333; */
         font-family: 'Arial';
         /* font-size: 18px !important; */
-        }
-      h1 { color: grey;}
-      .mermaid2,.mermaid3 {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+      }
+      h1 {
+        color: grey;
+      }
+      .mermaid2,
+      .mermaid3 {
         display: none;
       }
+      .mermaid {
+      }
       .mermaid svg {
+        border: 1px solid purple;
         /* font-size: 18px !important; */
+        fontfamily: 'courier';
       }
     </style>
   </head>
   <body>
-    <div>info below</div>
-    <div class="flex">
+    <pre class="mermaid" style="width: 50%">
+      %%{init: {"flowchart": {"htmlLabels": true}} }%%
+      flowchart LR
+      b("`The dog in **the** hog.(1).. a a a a *very long text* about it
+      Word!
+      
+      Another line with many, many words. Another line with many, many words. Another line with many, many words. Another line with many, many words. Another line with many, many words. Another line with many, many words. Another line with many, many words. Another line with many, many words.`") --apa--> c
+      
+          </pre
+    >
+    <pre class="mermaid" style="width: 50%">
+      classDiagram-v2
 
-<div class="mermaid3" style="width: 100%; height: 20%;">
-stateDiagram-v2
-  state S1 {
-    sub1 -->sub2
-  }
-
-  state S2 {
-    sub4
-  }
-  S1 --> S2
-  sub1 --> sub4
-
-</div>
-<div class="mermaid3" style="width: 100%; height: 20%;">
-stateDiagram
-  state CompositeState {
-      YourState123456789012345123456789123456789012345123456789123456789012345123456789123456789012345123456789 --> MyState:a label
-    }
-
-</div>
-<div class="mermaid3" style="width: 100%; height: 20%;">
-flowchart
-subgraph CompositeState
-  subgraph AnotherCompositeStateCompositeStateCompositeStateCompositeState
-      YourState --a label--> MyState
-  end
-
-end
-</div>
-<div class="mermaid" style="width: 100%; height: 20%;">
-%%{init: { "apa":"b", "theme":"forest"}}%%
-sequenceDiagram
-Alice->>Bob: Hi Bob
-Bob->>Alice: Hi Alice
-</div>
-    <div class="mermaid2">
-      %%{init: { 'theme':'base', '__proto__': {'polluted': 'asdf'}} }%%
-      %%{init: { 'theme':'base', '__proto__': {'polluted': 'asdf'}} }%%
-      graph LR
-          A --> B
-    </div>
-<div class="mermaid2" style="width: 100%; height: 20%;">
-flowchart TD
-  Link --> b
-  click Link href "&#x6A&#x61&#x76&#x61&#x73&#x63&#x72&#x69&#x70&#x74&#x3A&#x61&#x6C&#x65&#x72&#x74&#x28&#x27&#x58&#x53&#x53&#x27&#x29" "Tooltip for
-Amet"
-  </div>
-<div class="mermaid2" style="width: 100%; height: 20%;">
-stateDiagram-v2
-state CS {
-state ACS {
-YourState
-}
-}
-  </div>
-<div class="mermaid2" style="width: 100%; height: 20%;">
-      stateDiagram-v2
-        [*] --> Active
-
-        state Active {
-            [*] --> NumLockOff
-            NumLockOff --> NumLockOn : EvNumLockPressed
-            NumLockOn --> NumLockOff : EvNumLockPressed
-            --
-            [*] --> CapsLockOff
-            CapsLockOff --> CapsLockOn : EvCapsLockPressed
-            CapsLockOn --> CapsLockOff : EvCapsLockPressed
-        }
-        state SomethingElse {
-          A --> B
-          B --> A
-        }
-
-        Active --> SomethingElse
-        note right of SomethingElse : This is the note to the right.
-
-        SomethingElse --> [*]  </div>
-  <script src="./mermaid.js"></script>
-    <script>
+      classA -- classB : Inheritance
+      classA -- classC : link
+      classC -- classD : link
+      classB -- classD
+    </pre>
+    <pre class="mermaid" style="width: 50%">
+      sequenceDiagram
+      Alice->>Bob: Extremely utterly long line of longness which had previously overflown the actor box as it is much longer than what it should be
+      loop Loopy
+          Bob->>Alice: Pasten
+      end
+    </pre>
+    <pre class="mermaid" style="width: 50%">
+      %%{init: {"flowchart": {"htmlLabels": false}} }%%
+      flowchart LR
+      b("`The dog in **the** hog.(1)
+      NL`") --"`1o **bold**`"--> c[new strings svg labels]
+    </pre>
+    <pre class="mermaid" style="width: 50%">
+      %%{init: {"flowchart": {"htmlLabels": true}} }%%
+      flowchart LR
+      b("`The dog in **the** hog.(1)
+      NL`") --"`1o **bold**`"--> c[new strings html labels]
+    </pre>
+    <pre class="mermaid" style="width: 50%">
+      %%{init: {"flowchart": {"htmlLabels": true}} }%%
+      flowchart LR
+      b("The dog in the hog.(1)\nNL") --"1o bold"--> c[old strings svg labels]
+    </pre>
+    <script type="module">
+      // import mindmap from '../../packages/mermaid-mindmap/src/detector';
+      // import example from '../../packages/mermaid-example-diagram/src/mermaid-example-diagram.core.mjs';
+      import mermaid from './mermaid.esm.mjs';
+      // await mermaid.registerExternalDiagrams([example]);
       mermaid.parseError = function (err, hash) {
-          // console.error('Mermaid error: ', err);
-        };
+        // console.error('Mermaid error: ', err);
+      };
       mermaid.initialize({
-        theme: 'base',
-        arrowMarkerAbsolute: true,
-        // themeCSS: '.edgePath .path {stroke: red;} .arrowheadPath {fill: red;}',
-        logLevel: 2,
-        flowchart: { nodeSpacing: 10, curve: 'cardinal', htmlLabels: true },
-        htmlLabels: true,
-        // gantt: { axisFormat: '%m/%d/%Y' },
-        sequence: { actorFontFamily: 'courier',actorMargin: 50, showSequenceNumbers: false },
-        // sequenceDiagram: { actorMargin: 300 } // deprecated
-        // fontFamily: '"times", sans-serif',
-        // fontFamily: 'courier',
-        state:{
-          nodeSpacing: 50,
-          rankSpacing: 50,
-          defaultRenderer: 'dagre-wrapper',
+        // theme: 'forest',
+        startOnLoad: true,
+        logLevel: 0,
+        flowchart: {
+          // defaultRenderer: 'elk',
+          useMaxWidth: false,
+          // htmlLabels: false,
+          htmlLabels: true,
         },
-        logLevel:0,
-        fontSize: 18,
-        curve: 'cardinal',
-        securityLevel: 'strict',
-        // themeVariables: {relationLabelColor: 'red'}
+        // htmlLabels: false,
+        gantt: {
+          useMaxWidth: false,
+        },
+        sequence: {
+          wrap: true,
+        },
+        useMaxWidth: false,
       });
-      function callback(){alert('It worked');}
+      function callback() {
+        alert('It worked');
+      }
+      mermaid.parseError = function (err, hash) {
+        console.error('In parse error:');
+        console.error(err);
+      };
+      // mermaid.test1('first_slow', 1200).then((r) => console.info(r));
+      // mermaid.test1('second_fast', 200).then((r) => console.info(r));
+      // mermaid.test1('third_fast', 200).then((r) => console.info(r));
+      // mermaid.test1('forth_slow', 1200).then((r) => console.info(r));
     </script>
   </body>
 </html>

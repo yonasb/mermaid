@@ -1,5 +1,4 @@
-/* eslint-env jest */
-import { imgSnapshotTest, renderGraph } from '../../helpers/util.js';
+import { imgSnapshotTest, renderGraph } from '../../helpers/util.ts';
 
 describe('Requirement diagram', () => {
   it('sample', () => {
